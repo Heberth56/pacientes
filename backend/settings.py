@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     # 'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'pacientes_api',
-    'corsheaders',
+    'corsheaders',    
 ]
 
 MIDDLEWARE = [
@@ -103,13 +103,25 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 }
 
+
+
+
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'pacientes',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '123456',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pacientes',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': 'pacientes_mywm',
+        'USER': 'admin',
+        'PASSWORD': 'Atbe26bSDTxzTFu2o7HAknQ5jGGYpkXZ',
+        'HOST': 'dpg-cs2b7g56l47c73benoeg-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }

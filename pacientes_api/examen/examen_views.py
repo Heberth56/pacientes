@@ -136,8 +136,8 @@ class ListDiagnosticPatient(APIView):
             for i in examen:                
                 format_data['patient'] = i.patient.first_name+' '+i.patient.last_name
                 format_data['cedula'] = i.patient.cedula
-                format_data['result'].append({})
-                print(i)
+                format_data['result'].append({'id':test_decode.enconde_id(i.id),'fecha':i.crated_at})
+                
             return standar_response(data=format_data, message="Datos obtenidos exitosamente")
         except Exception as e:
             print(e)

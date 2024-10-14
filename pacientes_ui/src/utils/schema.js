@@ -6,7 +6,7 @@ export const schema = Yup.object().shape({
     .required("El usuario es requerido")
     .trim(),
   password: Yup.string()
-    .min(6, "Minimo de caracteres 6")
+    .min(5, "Minimo de caracteres 5")
     .max(100, "Maximo de caracteres 100")
     .required("El password es requerido"),
 });

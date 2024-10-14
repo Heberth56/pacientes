@@ -13,7 +13,7 @@ import Links from "./Links";
 import Dropdown from "./Dropdown";
 import Lottie from "lottie-react";
 
-const Sidebar = ({ menu }) => {
+const SideBar = ({ menu }) => {
   return (
     <div
       className={`h-screen fixed left-0 top-0 overflow-auto bg-sky-950 custom-scrollbar text-white ${
@@ -96,7 +96,7 @@ const Sidebar = ({ menu }) => {
               Administrar Examenes
             </Links>
           </Dropdown>
-          <Links link="/logout">
+          <Links link="/">
             <FaSignOutAlt className="text-red-500" /> Cerrar sesión
           </Links>
         </ul>
@@ -105,4 +105,4 @@ const Sidebar = ({ menu }) => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

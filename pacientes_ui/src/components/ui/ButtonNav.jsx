@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 const ButtonNav = ({ text, to, out = false, children }) => {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate(`/dashboard${to}`);
+    navigate(to);
   };
   return (
     <button

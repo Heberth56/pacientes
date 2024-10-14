@@ -32,7 +32,7 @@ const Navbar = ({ menu, setMenu }) => {
         <ButtonNav text="Examen" to="/examenes/admin">
           <FaClipboard />
         </ButtonNav>
-        <ButtonNav text="Salir" to="/home" out={true}>
+        <ButtonNav text="Salir" to="/" out={true}>
           <FaSignOutAlt />
         </ButtonNav>
       </div>

@@ -54,7 +54,7 @@ function Navbar() {
           </ul>
           <div className="space-x-12 hidden lg:flex items-center">
             <a
-              href="/dashboard/home"
+              href="/login"
               className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGray"
             >
               Login

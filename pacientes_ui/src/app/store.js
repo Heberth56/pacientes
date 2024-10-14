@@ -6,6 +6,7 @@ import patientsSlice from "./slice/patientsSlice";
 import specialtySlices from "./slice/specialtySlices";
 import temaSlice from "./slice/temaSlice";
 import testSlice from "./slice/testSlice";
+import diagnosticSlice from "./slice/diagnosticSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     specialtySlices: specialtySlices,
     temaSlice: temaSlice,
     testSlice: testSlice,
+    diagnosticSlice: diagnosticSlice,
   },
 });

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diagnostico de pacientes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .title {
+        color: rgba(1, 67, 249, 0.8);
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 800;
+      }
+
+      .label_title {
+        font-weight: 700;
+        color: rgba(1, 67, 249, 0.566);
+        border-bottom: 1px dotted rgba(196, 197, 202, 0.022);
+        margin: 10px 0;
+      }
+
+      .label {
+        font-weight: 600;
+        color: rgb(0, 34, 255);
+      }
+
+      .value {
+        font-weight: 500;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="title">HISTORIAL CLINICO DEL PACIENTE</h2>
+    <table>
+      <div class="label_title">DATOS DEL PACIENTE</div>
+      <tbody>
+        <tr>
+          <td>
+            <span class="label">Nombre completo:</span>
+          </td>
+          <td>
+            <span class="value">{{patient}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label"> Cédula: </span>
+          </td>
+          <td>
+            <span class="value">{{patient_cedula}}</span>
+          </td>
+          <td align="right">
+            <span class="label">Dirección:</span>
+          </td>
+          <td>
+            &nbsp;&nbsp;
+            <span class="value">{{patient_address}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label"> Teléfono/Celular: </span>
+          </td>
+          <td>
+            <span class="value">{{patient_phone}}</span>
+          </td>
+          <td align="right">
+            <span class="label">Edad:</span>
+          </td>
+          <td>
+            &nbsp;&nbsp;
+            <span class="value">{{patient_age}} años</span>
+          </td>
+          <td align="right">
+            <span class="label">Género:</span>
+          </td>
+          <td>
+            &nbsp;&nbsp;
+            <span class="value">{{patient_gender}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <div class="label_title">MÉDICO RESPONSABLE</div>
+      <tbody>
+        <tr>
+          <td>
+            <span class="label">Nombre completo:</span>
+          </td>
+          <td>
+            <span class="value">{{medico}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label"> Dirección: </span>
+          </td>
+          <td>
+            <span class="value">{{medico_address}}</span>
+          </td>
+          <td align="right">
+            <span class="label">Teléfono/Celular:</span>
+          </td>
+          <td>
+            &nbsp;&nbsp;
+            <span class="value">{{medico_phone}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -4,7 +4,7 @@ const useGlobalNavigate = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
-    navigate(`/dashboard${path}`);
+    navigate(path);
   };
 
   return { handleNavigate };

@@ -1,13 +1,17 @@
 import Lottie from "lottie-react";
-import aboutLottie from "../../assets/lottie/about-1.json";
 import gearsLottie from "../../assets/lottie/gear.json";
+import imgDoctor from "../../assets/images/doctors.jpg";
 const About = () => {
   return (
     <div id="about">
       <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto my-8">
         <div className="md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div>
-            <Lottie animationData={aboutLottie} className="max-w-xs mx-auto" />
+            <img
+              src={imgDoctor}
+              alt="Image not found"
+              className="w-full object-contain"
+            />
           </div>
           <div className="md:w-3/5 mx-auto">
             <h2 className="text-4xl text-neutralDGray font-semibold mb-4 md:w-4/5">
