@@ -104,9 +104,6 @@ SIMPLE_JWT = {
 }
 
 
-
-
-
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     #     'NAME': 'pacientes',
@@ -115,6 +112,8 @@ SIMPLE_JWT = {
     #     'HOST': 'localhost',
     #     'PORT': '5432',
     # }
+
+    
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
