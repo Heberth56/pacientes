@@ -11,3 +11,11 @@ header {
 .btn-primary {
   @apply px-7 py-2 bg-brandPrimary text-white rounded hover:bg-neutralDGray transition-all duration-300
 }
+
+.bg-landing {
+  @apply bg-gradient-to-r from-fuchsia-500 to-purple-900 bg-clip-text text-transparent font-bold
+}
+
+.bg-btn-landing {
+  @apply bg-gradient-to-r from-fuchsia-500 to-purple-900 text-white py-2 px-4 transition-all duration-300 rounded hover:from-fuchsia-700 hover:to-purple-700
+}

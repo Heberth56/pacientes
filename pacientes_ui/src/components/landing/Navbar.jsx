@@ -20,9 +20,9 @@ function Navbar() {
   return (
     <header className="w-full bg-white md:bg-transparent fixed">
       <nav
-        className={`py-4 lg:px-14 px-4 ${
+        className={`py-4 lg:px-14 px-4${
           isSticky
-            ? "sticky top-0 left-0 right-0 border-b bg-white duration-300"
+            ? "sticky top-0 left-0 right-0 border-b bg-white duration-200"
             : ""
         }`}
       >
@@ -36,7 +36,10 @@ function Navbar() {
               alt="Imagen no encontrada"
               className="w-10 inline-block items-center"
             />
-            <span className="text-[#263238]">LABORATORIO</span>
+            <span className="bg-landing text-base text-center">
+              Laboratorio Clínico <br />
+              Virgen de Cotoca
+            </span>
           </a>
           <ul className="md:flex space-x-12 hidden">
             {navItems.map((elem, index) => (
@@ -46,17 +49,14 @@ function Navbar() {
                 offset={-100}
                 to={elem.path}
                 key={index}
-                className="block text-base text-textGray hover:text-brandPrimary first:font-medium cursor-pointer"
+                className="block text-base text-textGray hover:text-purple-800 font-medium cursor-pointer"
               >
                 {elem.link}
               </Link>
             ))}
           </ul>
           <div className="space-x-12 hidden lg:flex items-center">
-            <a
-              href="/login"
-              className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGray"
-            >
+            <a href="/login" className="bg-btn-landing">
               Login
             </a>
           </div>

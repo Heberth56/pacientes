@@ -22,11 +22,11 @@ function LoginPage() {
   }, [error]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-emerald-50 to-sky-50">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 to-violet-50">
       <Toaster />
-      <div className="grid grid-cols-2 gap-4 w-full max-w-2xl p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-sky-100">
+      <div className="grid grid-cols-2 gap-4 w-full max-w-2xl p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-violet-100">
         <div>
-          <h1 className="text-center text-2xl font-semibold mb-4 text-sky-700">
+          <h1 className="text-center text-2xl font-semibold mb-4 text-violet-700">
             Inicio de Sessión
           </h1>
           <Formik

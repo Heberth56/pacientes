@@ -14,14 +14,20 @@ const About = () => {
             />
           </div>
           <div className="md:w-3/5 mx-auto">
-            <h2 className="text-4xl text-neutralDGray font-semibold mb-4 md:w-4/5">
-              Clínica con especialistas en el area
+            <h2 className="text-4xl bg-landing mb-4 md:w-4/5">
+              Sobre Nosotros
             </h2>
-            <p className="md:w-3/4 text-sm text-neutralDGray mb-8">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sit
-              sed iusto necessitatibus? Deserunt non reiciendis, excepturi iusto
-              quae fugiat sint vitae architecto eos vero consectetur dolorum
-              magnam laudantium exercitationem.
+            <p className=" text-sm text-neutralDGray mb-8">
+              El laboratorio clínico, inicialmente conocido como "Clínica Mayo",
+              fue fundado el 24 de mayo de 1991 en Sopocachi, donde se encargaba
+              de manejar todos los datos generados en su ámbito de trabajo,
+              incluyendo la admisión de pacientes, la asignación de tareas, la
+              recepción de resultados, el control de calidad, la elaboración de
+              informes y la gestión de archivos históricos. En ese contexto, se
+              estaba presenciando el surgimiento de redes informáticas,
+              permitiendo que los clínicos solicitaran pruebas analíticas
+              directamente a través de un ordenador y recibieran los resultados
+              de la misma manera.
             </p>
           </div>
         </div>
@@ -31,11 +37,15 @@ const About = () => {
           <div className="md:w-1/2">
             <h2 className="text-4xl text-neutralDGray font-semibold mb-4 md:w-4/5">
               Consultas Aplicadas <br />
-              <span className="text-brandPrimary">Ayudas Especializadas</span>
+              <span className="bg-landing">Ayudas Especializadas</span>
             </h2>
-            <p className="md:w-3/4 text-sm text-neutralDGray mb-8">
-              Hemos alcanzado nuestros objetivos gracias a nuestro arduo trabajo
-              y dedicación constante.
+            <p className="text-sm text-neutralDGray mb-8">
+              Si bien el laboratorio se esfuerza notablemente por mejorar la
+              instrumentación y la aplicación de métodos validados y
+              controlados, se ha observado una menor diligencia en la
+              implementación de medidas destinadas a mejorar las características
+              del registro de pacientes, un proceso que podría beneficiarse
+              significativamente de la integración de nuevas tecnologías.
             </p>
           </div>
           <div className="md:w-1/2 flex">

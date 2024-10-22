@@ -18,10 +18,10 @@ const Diagnostics = () => {
 
   return (
     <div
-      className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto bg-neutralSilver"
+      className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto bg-violet-100 my-5"
       id="diagnostic"
     >
-      <h2 className="text-center font-semibold text-2xl lg:text-3xl text-brandPrimary underline">
+      <h2 className="bg-landing text-center font-bold text-2xl lg:text-3xl  underline">
         REALIZE SU CONSULTA
       </h2>
       <p className="text-base text-neutralDGray font-medium underline">NOTA:</p>
@@ -54,7 +54,7 @@ const Diagnostics = () => {
               />
               <button
                 type="submit"
-                className="bg-teal-900 text-white px-5 rounded-md font-bold"
+                className="bg-btn-landing text-white px-5 rounded-md font-bold"
               >
                 Buscar
               </button>
@@ -65,7 +65,7 @@ const Diagnostics = () => {
       <div className="mt-5 w-full flex justify-center">
         <table className="table-auto md:w-1/2 w-full bg-white border border-gray-200">
           <thead>
-            <tr className="bg-teal-900 text-white">
+            <tr className="bg-violet-800 text-white">
               <th className="py-2">#</th>
               <th>Fecha</th>
               <th>Opciones</th>
