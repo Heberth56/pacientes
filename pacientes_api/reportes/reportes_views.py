@@ -17,7 +17,7 @@ class TestPatient(APIView):
         """
         try:
             id = test_decode.decode_id(test_id)
-            examen = Examen.objects.select_related('patient', 'user').get(id=id)
+            examen = Examen.objects.select_related('patient', 'user').get(id=id)            
             format_data = {
                 'patient': f"{examen.patient.first_name} {examen.patient.last_name}",
                 'patient_cedula':examen.patient.cedula,
@@ -27,14 +27,14 @@ class TestPatient(APIView):
                 'patient_address':examen.patient.address,
                 'created_at': examen.crated_at,
                 'diagnostic': examen.diagnostic,
-                'temas': '',  
+                'temas': '',
                 'medico': f"{examen.user.first_name} {examen.user.last_name}",
                 'medico_phone':examen.user.phone,
                 'medico_address':examen.user.address
             }                                   
 
             temas = Temas.objects.filter(id__in=examen.temas)
-            format_data['temas'] = [tema.name for tema in temas ]            
+            format_data['temas'] = [tema.name for tema in temas ]
                                     
             template = get_template('consult.html')
             html = template.render(format_data)

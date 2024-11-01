@@ -34,6 +34,11 @@
   </head>
   <body>
     <h2 class="title">HISTORIAL CLINICO DEL PACIENTE</h2>
+    {% load static %}
+    <img
+      src="{% static 'images/LogoLab.jpg' %}"
+      alt="Descripción de la imagen"
+    />
     <table>
       <div class="label_title">DATOS DEL PACIENTE</div>
       <tbody>
@@ -113,5 +118,12 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="label_title">Examenes solicitados</div>
+    <ul>
+      {% for item in temas %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>

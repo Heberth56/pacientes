@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDiagnosticDataThunk } from "../app/slice/testSlice";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
-import toast, { Toaster } from "react-hot-toast";
 import telescopyLottie from "../assets/lottie/telescopy.json";
 import { RiAlignItemHorizontalCenterFill } from "react-icons/ri";
 import QRCode from "qrcode.react";
@@ -19,6 +18,7 @@ const Title = ({ title, children }) => {
     </div>
   );
 };
+
 const Diagnostico = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
