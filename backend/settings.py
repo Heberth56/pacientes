@@ -6,9 +6,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xohx_$e$ikn9gw@nelme6*)y37#8--(vtm@i(ajniyk=!e5cxe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
-ALLOWED_HOSTS = ['pacientes-2lb0.onrender.com', '127.0.0.1', 'localhost']
+# DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['https://pacientes-dev.onrender.com', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

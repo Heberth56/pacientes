@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { testPatient } from "../api/testApi";
+import { reportApi } from "../api/reportApi";
 
 const initialState = {
   data: [],
@@ -16,6 +17,19 @@ export const testPatientDataThunk = createAsyncThunk(
     try {
       const { labasis } = await testPatient(payload);
 
+      if (labasis.success) return labasis.data;
+      else return rejectWithValue(labasis.message);
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
+export const reportSliceDataThunk = createAsyncThunk(
+  "report-patient/get",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const { labasis } = await reportApi(payload);
       if (labasis.success) return labasis.data;
       else return rejectWithValue(labasis.message);
     } catch (err) {
@@ -42,6 +56,22 @@ const diagnosticSlice = createSlice({
       })
 
       .addCase(testPatientDataThunk.rejected, (state, action) => {
+        state.message = action.payload;
+        state.isLoading = false;
+        state.error = true;
+      })
+
+      .addCase(reportSliceDataThunk.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+        state.message = "";
+      })
+
+      .addCase(reportSliceDataThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
+
+      .addCase(reportSliceDataThunk.rejected, (state, action) => {
         state.message = action.payload;
         state.isLoading = false;
         state.error = true;

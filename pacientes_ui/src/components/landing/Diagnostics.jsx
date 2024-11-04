@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   testPatientDataThunk,
   diagnosticData,
+  reportSliceDataThunk,
 } from "../../app/slice/diagnosticSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Links from "../ui/Links";
@@ -12,8 +13,8 @@ const Diagnostics = () => {
   const dispatch = useDispatch();
   const dataTest = useSelector(diagnosticData);
 
-  const handleNavigate = () => {
-    navigate("consult");
+  const handleReport = (id) => {
+    dispatch(reportSliceDataThunk(id));
   };
 
   return (
@@ -72,7 +73,6 @@ const Diagnostics = () => {
             </tr>
           </thead>
           <tbody>
-            {console.log(dataTest)}
             {dataTest?.result?.length == 0 || dataTest.length == 0 ? (
               <tr>
                 <td colSpan={3} className="p-2">
@@ -91,7 +91,10 @@ const Diagnostics = () => {
                         <span className="font-semibold">Ver</span>
                       </Links>
 
-                      <button className="mt-1 p-3 hover:bg-gray-300 hover:bg-opacity-30 flex gap-1">
+                      <button
+                        className="mt-1 p-3 hover:bg-gray-300 hover:bg-opacity-30 flex gap-1"
+                        onClick={() => handleReport(elem.id)}
+                      >
                         <FaFilePdf className="text-red-600 text-lg" />
                         pdf
                       </button>

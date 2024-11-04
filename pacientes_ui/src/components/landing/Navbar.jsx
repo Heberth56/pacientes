@@ -3,11 +3,16 @@ import { navItems } from "../../utils/navItems";
 import logoImg from "../../assets/images/logo.png";
 import { Link } from "react-scroll";
 import { FaXmark, FaBars } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+  const navigate = useNavigate();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,9 +61,13 @@ function Navbar() {
             ))}
           </ul>
           <div className="space-x-12 hidden lg:flex items-center">
-            <a href="/login" className="bg-btn-landing">
+            <button
+              href="/login"
+              className="bg-btn-landing"
+              onClick={handleLogin}
+            >
               Login
-            </a>
+            </button>
           </div>
 
           <div className="md:hidden">
