@@ -9,7 +9,7 @@ const CustomDropdown = ({
 }) => {
   return (
     <div className="flex flex-col gap-1 w-full">
-      <label className="text-blue-950 font-semibold">
+      <label className="text-blue-950 font-semibold md:text-base text-sm">
         {title}
         {required && <span className="text-red-500 font-medium"> *</span>}
       </label>
@@ -17,7 +17,7 @@ const CustomDropdown = ({
         as="select"
         name={name}
         disabled={disabled}
-        className="px-4 text-lg py-3 rounded-lg outline-none border-2 border-[#F3F4F6]"
+        className="px-4 md:text-base text-sm py-3 rounded-lg outline-none border-2 border-[#F3F4F6]"
       >
         {children}
       </Field>

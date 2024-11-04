@@ -46,7 +46,7 @@ const TableNavigate = ({ table, count }) => {
           <FaAngleDoubleRight />
         </ButtonNavigate>
       </div>
-      <div className="">
+      <div className="md:text-base text-sm">
         Mostrando de {Number(table.getRowModel().rows[0]?.id) + 1 || 0} a &nbsp;
         {Number(
           table.getRowModel().rows[table.getRowModel().rows.length - 1]?.id

@@ -13,15 +13,17 @@ const CustomPassword = ({
 
   return (
     <div className="flex flex-col gap-1 w-full">
-      <label className="text-blue-950 font-semibold">{title}</label>
-      <div className="text-xl rounded-2xl overflow-hidden pr-4 flex border-2 bg-white border-[#F3F4F6] items-center gap-3">
+      <label className="text-blue-950 font-semibold md:text-base text-sm">
+        {title}
+      </label>
+      <div className="rounded-2xl overflow-hidden pr-4 flex border-2 bg-white border-[#F3F4F6] items-center gap-3">
         <Field
           name={name}
-          placeholder={placeholder}
+          placeholder="************"
           disabled={disabled}
           type={showPassword ? "text" : "password"}
           autoComplete="off"
-          className="outline-none w-full p-4"
+          className="outline-none focus:outline-none focus:ring-0 focus:border-transparent border-none w-full p-4 md:text-base text-sm"
           required={required}
         />
         <button type="button" onClick={() => setShowPassword(!showPassword)}>

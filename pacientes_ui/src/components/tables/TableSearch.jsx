@@ -17,7 +17,7 @@ const TableSearch = ({ filter, setFilter }) => {
         placeholder="Buscar..."
         onChange={(e) => setFilter(e.target.value)}
         value={filter}
-        className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"
+        className="md:text-base text-sm border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"
       />
       <Tooltip id="my-search" place="bottom" />
     </div>

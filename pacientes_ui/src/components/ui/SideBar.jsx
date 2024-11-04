@@ -21,7 +21,10 @@ const SideBar = ({ menu }) => {
       } transition-all duration-300 md:fixed`}
     >
       <div className="py-6">
-        <h4 className="text-center font-semibold">Medicina.org</h4>
+        <h4 className="text-center font-semibold md:text-base text-sm">
+          Laboratorio <br />
+          Virgen de Cotoca
+        </h4>
         <div className="flex items-center justify-center">
           <Lottie animationData={SideBarLottie} className="w-40 h-40" />
         </div>

@@ -14,7 +14,7 @@ const Dropdown = ({ title, children, icon }) => {
           className="w-full py-3 flex items-center justify-between pr-3"
           onClick={handleMenuClick}
         >
-          <span>{title}</span>
+          <span className="md:text-base text-sm">{title}</span>
           <FaCaretDown
             className={`transition-transform duration-500 ${
               openMenu ? "rotate-180 text-red-500" : "rotate-0 text-green-500"

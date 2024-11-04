@@ -87,7 +87,9 @@ const UsuariosAdmin = () => {
   return (
     <TableContent data={data} columns={columns} isLoading={isLoading} col={6}>
       <Toaster />
-      <h1 className="text-xl font-bold">ADMINISTRACION DE USUARIOS</h1>
+      <h1 className="md:text-xl text-base font-bold">
+        ADMINISTRACION DE USUARIOS
+      </h1>
       <ButtonTable to="/usuarios" />
     </TableContent>
   );

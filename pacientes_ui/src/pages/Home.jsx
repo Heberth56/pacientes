@@ -6,12 +6,12 @@ import Roles from "../components/charts/Roles";
 const Home = () => {
   return (
     <div className="px-5 gap-6 flex flex-col">
-      <h1 className="text-3xl font-bold text-sky-700 uppercase">
+      <h1 className="text-lg md:text-3xl font-bold text-sky-700 uppercase">
         BIENVENIDO JHON BON DOE
         <hr />
       </h1>
 
-      <p className="text-gray-700">
+      <p className="text-gray-700 md:text-base text-sm">
         Aquí puedes ver las estadísticas detalladas de las "Especialidades",
         "Temas" y "Exámenes" para los dos meses más activos del año actual. Esta
         visualización te ayudará a entender mejor las tendencias y el
@@ -27,7 +27,7 @@ const Home = () => {
         <div className="md:w-1/2">
           <PacientesChart />
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 md:text-base text-sm">
           Un registro de pacientes es un sistema detallado y organizado que
           contiene información esencial sobre la salud y el historial médico de
           cada paciente. Incluye datos personales como nombre, edad y contacto,
@@ -37,8 +37,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6 items-center text-justify">
-        <div className="md:w-1/2">
+      <div className="flex flex-col md:flex-row gap-6 items-center">
+        <div className="md:w-1/2 md:text-base text-sm">
           Un registro de usuarios con roles definidos como administrador,
           doctor, secretario y enfermera, contiene información esencial para la
           gestión del sistema de salud. Este registro facilita la asignación de

@@ -87,7 +87,7 @@ const Consult = () => {
               </button>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex flex-wrap items-center gap-5">
               <Title title="Fecha:">
                 <span className="text-normal">{data?.created_at || ""}</span>
               </Title>
@@ -101,7 +101,9 @@ const Consult = () => {
               </Title>
 
               <Title title="Médico encargado:">
-                <span className="text-normal">{data?.medico || ""}</span>
+                <span className="text-normal capitalize">
+                  {data?.medico || ""}
+                </span>
               </Title>
             </div>
 

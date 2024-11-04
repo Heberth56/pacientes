@@ -7,7 +7,7 @@ const Box = ({ title, children }) => (
     justify-center text-white text-3xl hover:bg-sky-900 hover:text-sky-400"
   >
     {children}
-    <span className="font-semibold text-lg">{title}</span>
+    <span className="font-semibold text-base md:text-lg">{title}</span>
   </div>
 );
 
@@ -15,10 +15,10 @@ const Roles = () => {
   return (
     <div className="flex flex-col md:flex-row gap-6 p-6 bg-sky-950 rounded-lg shadow-md ">
       <div className="flex-1 flex flex-col justify-center md:w-1/3 md:mb-0 pr-4">
-        <h2 className="text-xl font-semibold text-sky-300 mb-2">
+        <h2 className="md:text-xl text-base font-semibold text-sky-300 mb-2">
           Descripción de la Clínica
         </h2>
-        <p className="text-sky-600">
+        <p className="text-sky-600 md:text-base text-sm">
           La clínica ofrece una variedad de servicios médicos para atender a
           todas tus necesidades de salud. Nuestro equipo de profesionales está
           comprometido con el bienestar y la satisfacción de nuestros pacientes.

@@ -24,9 +24,9 @@ function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 to-violet-50">
       <Toaster />
-      <div className="grid grid-cols-2 gap-4 w-full max-w-2xl p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-violet-100">
+      <div className="flex flex-wrap-reverse justify-center items-center md:flex-nowrap gap-4 w-full p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-violet-100">
         <div>
-          <h1 className="text-center text-2xl font-semibold mb-4 text-violet-700">
+          <h1 className="text-center text-lg md:text-2xl font-semibold mb-4 text-violet-700">
             Inicio de Sessión
           </h1>
           <Formik
@@ -61,7 +61,10 @@ function LoginPage() {
           </Formik>
         </div>
         <div className="flex items-center justify-center">
-          <Lottie animationData={loginLottie} className="max-w-xs mx-auto" />
+          <Lottie
+            animationData={loginLottie}
+            className="md:w-72 md:h-72 w-40 h-40"
+          />
         </div>
       </div>
     </div>

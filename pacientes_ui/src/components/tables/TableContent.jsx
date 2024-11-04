@@ -47,7 +47,10 @@ const TableContent = ({ data, columns, isLoading, col = 3, children }) => {
           {table.getHeaderGroups().map((elem) => (
             <tr key={elem.id} className="bg-sky-950 p-5 text-white">
               {elem.headers.map((val) => (
-                <th key={val.id} className="py-2 px-4 text-left uppercase">
+                <th
+                  key={val.id}
+                  className="py-2 px-4 text-left uppercase md:text-base text-sm"
+                >
                   {val.isPlaceholder
                     ? null
                     : flexRender(val.column.columnDef.header, val.getContext())}
@@ -62,7 +65,10 @@ const TableContent = ({ data, columns, isLoading, col = 3, children }) => {
           ) : (
             <>
               {table.getRowModel().rows.map((elem) => (
-                <tr key={elem.id} className="text-gray-600 hover:bg-gray-100">
+                <tr
+                  key={elem.id}
+                  className="text-gray-600 md:text-base text-sm hover:bg-gray-100"
+                >
                   {elem.getVisibleCells().map((cell) => (
                     <td key={cell.id} className="py-2 px-4">
                       {flexRender(

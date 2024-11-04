@@ -111,11 +111,15 @@ const Usuarios = () => {
                 />
 
                 <CustomDropdown title="Rol" name="role">
-                  <option value="" key={"r"}>
+                  <option value="" key={"r"} className="md:text-base text-sm">
                     Seleccione un rol
                   </option>
                   {data?.map((elem, index) => (
-                    <option value={elem.id} key={index}>
+                    <option
+                      value={elem.id}
+                      key={index}
+                      className="md:text-base text-sm"
+                    >
                       {elem.name}
                     </option>
                   ))}

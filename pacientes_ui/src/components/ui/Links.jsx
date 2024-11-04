@@ -8,7 +8,9 @@ const Links = ({ link, active = false, children, ...props }) => {
           active ? "bg-gray-300 bg-opacity-30" : ""
         }`}
       >
-        <div className="flex items-center gap-1">{children}</div>
+        <div className="flex items-center gap-1 md:text-base text-sm">
+          {children}
+        </div>
       </li>
     </Link>
   );

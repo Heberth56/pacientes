@@ -53,7 +53,7 @@ const Diagnostico = () => {
 
   return (
     <div className="shadow-xl p-5 bg-slate-50 rounded-md">
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col flex-wrap md:flex-row gap-6">
         <div className="flex flex-col md:w-1/3 items-center justify-center">
           <Lottie
             animationData={telescopyLottie}
@@ -87,7 +87,7 @@ const Diagnostico = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5">
             <Title title="Fecha:">
               <span className="text-normal">{data?.created_at || ""}</span>
             </Title>
