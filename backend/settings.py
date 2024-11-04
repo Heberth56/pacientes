@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-xohx_$e$ikn9gw@nelme6*)y37#8--(vtm@i(ajniyk=!e5cxe
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = False
-ALLOWED_HOSTS = ['https://pacientes-dev.onrender.com', '127.0.0.1', 'localhost']
+# 'https://pacientes-dev.onrender.com', '127.0.0.1', 'localhost'
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -37,15 +38,16 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 
+# "http://localhost:5173",
+# "http://127.0.0.1:8000",
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:8000",
     "https://pacientes-dev.onrender.com"
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://pacientes-dev.onrender.com",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://pacientes-dev.onrender.com",
+# ]
 
 CORS_ALLOW_METHODS = [
     'DELETE',
