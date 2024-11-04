@@ -84,22 +84,31 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`space-y-4 px-4 py-2 mt-16 bg-brandPrimary ${
+          className={`space-y-4 px-4 py-2 mt-16 bg-white ${
             isMenuOpen ? "block fixed top-0 left-0 right-0" : "hidden"
           }`}
         >
-          {navItems.map((elem, index) => (
-            <Link
-              spy={true}
-              smooth={true}
-              offset={-100}
-              to={elem.path}
-              key={index}
-              className="block text-base text-white hover:text-brandPrimary first:font-medium"
+          <>
+            {navItems.map((elem, index) => (
+              <Link
+                spy={true}
+                smooth={true}
+                offset={-100}
+                to={elem.path}
+                key={index}
+                className="block text-base text-violet-800 hover:text-brandPrimary first:font-medium cursor-pointer"
+              >
+                {elem.link}
+              </Link>
+            ))}
+            <button
+              href="/login"
+              className="bg-btn-landing"
+              onClick={handleLogin}
             >
-              {elem.link}
-            </Link>
-          ))}
+              Login
+            </button>
+          </>
         </div>
       </nav>
     </header>
