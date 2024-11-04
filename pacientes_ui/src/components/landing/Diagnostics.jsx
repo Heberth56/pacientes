@@ -22,11 +22,13 @@ const Diagnostics = () => {
       className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto bg-violet-100 my-5"
       id="diagnostic"
     >
-      <h2 className="bg-landing text-center font-bold text-2xl lg:text-3xl  underline">
+      <h2 className="bg-landing text-center font-bold text-base lg:text-3xl  underline">
         REALIZE SU CONSULTA
       </h2>
-      <p className="text-base text-neutralDGray font-medium underline">NOTA:</p>
-      <p className="">
+      <p className="md:text-base text-sm text-neutralDGray font-medium underline">
+        NOTA:
+      </p>
+      <p className="md:text-base text-sm">
         Para consultar los resultados de sus exámenes en nuestra clínica, es
         necesario que ya esté registrado en nuestro sistema. Si ya cuenta con un
         registro, simplemente ingrese su cédula de identidad para acceder a los
@@ -51,11 +53,11 @@ const Diagnostics = () => {
                 type="number"
                 placeholder="Ingrese su cédula de identidad"
                 disabled={false}
-                className=" text-lg py-3 rounded-lg outline-none border-2 border-[#F3F4F6] w-full"
+                className=" md:text-lg text-sm py-3 rounded-lg outline-none border-2 border-[#F3F4F6] w-full"
               />
               <button
                 type="submit"
-                className="bg-btn-landing text-white px-5 rounded-md font-bold"
+                className="bg-btn-landing md:text-base text-sm"
               >
                 Buscar
               </button>
@@ -66,7 +68,7 @@ const Diagnostics = () => {
       <div className="mt-5 w-full flex justify-center">
         <table className="table-auto md:w-1/2 w-full bg-white border border-gray-200">
           <thead>
-            <tr className="bg-violet-800 text-white">
+            <tr className="bg-violet-800 text-white md:text-base text-sm">
               <th className="py-2">#</th>
               <th>Fecha</th>
               <th>Opciones</th>

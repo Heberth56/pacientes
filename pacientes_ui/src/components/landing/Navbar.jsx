@@ -25,7 +25,7 @@ function Navbar() {
   return (
     <header className="w-full bg-white md:bg-transparent fixed">
       <nav
-        className={`py-4 lg:px-14 px-4${
+        className={`md:py-4 py-1 md:px-14 px-6 ${
           isSticky
             ? "sticky top-0 left-0 right-0 border-b bg-white duration-200"
             : ""
@@ -41,7 +41,7 @@ function Navbar() {
               alt="Imagen no encontrada"
               className="w-10 inline-block items-center"
             />
-            <span className="bg-landing text-base text-center">
+            <span className="bg-landing md:text-base text-sm text-center">
               Laboratorio Clínico <br />
               Virgen de Cotoca
             </span>

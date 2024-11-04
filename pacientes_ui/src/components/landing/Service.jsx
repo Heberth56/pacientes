@@ -16,18 +16,18 @@ const iconMap = {
 const Service = () => {
   return (
     <div className=" max-w-screen-2xl mx-auto" id="service">
-      <div className="text-center my-8">
+      <div className="text-center my-8 mx-5">
         <h2 className="bg-landing md:text-4xl text-2xl text-neutralDGray font-semibold mb-2">
           Nuestros pacientes
         </h2>
 
-        <p className="text-neutralGrey">
+        <p className="text-neutralGrey md:text-base text-sm">
           Nuestros pacientes están satisfechos con nuestros servicios y la
           precisión de nuestros diagnósticos. Además, pueden consultar
           fácilmente sus resultados a través de nuestra página web, lo que les
           brinda comodidad y acceso rápido a su información médica.
         </p>
-        <div className="flex md:gap-24 gap-10 justify-center items-center my-5">
+        <div className="flex md:gap-24 gap-5 justify-center items-center my-5">
           <FaPeopleGroup size={45} className="text-violet-800" />
           <AiFillMedicineBox size={45} className="text-violet-800" />
           <GiMedicinePills size={45} className="text-violet-800" />
@@ -40,9 +40,9 @@ const Service = () => {
         <h2 className="md:text-4xl text-2xl text-neutralDGray font-semibold mb-2 text-center">
           Nuestros <span className="bg-landing">Ambientes</span>
         </h2>
-        <div className="flex flex-wrap gap-5 justify-center items-center mt-5">
+        <div className="flex flex-wrap md:gap-5 gap-1 justify-center items-center mt-5">
           {galery.map((elem) => (
-            <div key={elem.id} className="relative w-44 h-44">
+            <div key={elem.id} className="relative md:w-44 md:h-44 w-36 h-36">
               <img
                 src={elem.imagen}
                 alt="image not found"
@@ -60,7 +60,7 @@ const Service = () => {
         <h2 className="md:text-4xl text-2xl text-neutralDGray font-semibold mb-2">
           Gestiona tu atención médica <br /> de manera centralizada
         </h2>
-        <p className="text-neutralGrey">
+        <p className="text-neutralGrey md:text-base text-sm">
           El Laboratorio Clínico "Virgen de Cotoca" despliega su función
           primordial de diagnóstico mediante la realización de una amplia gama
           de exámenes, incluyendo hematología, química sanguínea, análisis de

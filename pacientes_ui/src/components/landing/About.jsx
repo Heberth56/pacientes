@@ -14,10 +14,10 @@ const About = () => {
             />
           </div>
           <div className="md:w-3/5 mx-auto">
-            <h2 className="text-4xl bg-landing mb-4 md:w-4/5">
+            <h2 className="md:text-4xl text-xl bg-landing mb-4 md:w-4/5">
               Sobre Nosotros
             </h2>
-            <p className=" text-sm text-neutralDGray mb-8">
+            <p className="md:text-base text-sm text-neutralDGray mb-8">
               El laboratorio clínico, inicialmente conocido como "Clínica Mayo",
               fue fundado el 24 de mayo de 1991 en Sopocachi, donde se encargaba
               de manejar todos los datos generados en su ámbito de trabajo,
@@ -35,11 +35,11 @@ const About = () => {
       <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto bg-neutralSilver py-10">
         <div className="flex md:flex-row flex-col items-center">
           <div className="md:w-1/2">
-            <h2 className="text-4xl text-neutralDGray font-semibold mb-4 md:w-4/5">
+            <h2 className="md:text-4xl text-xl text-neutralDGray font-semibold mb-4 md:w-4/5">
               Consultas Aplicadas <br />
               <span className="bg-landing">Ayudas Especializadas</span>
             </h2>
-            <p className="text-sm text-neutralDGray mb-8">
+            <p className="md:text-base text-sm text-neutralDGray mb-8">
               Si bien el laboratorio se esfuerza notablemente por mejorar la
               instrumentación y la aplicación de métodos validados y
               controlados, se ha observado una menor diligencia en la
