@@ -5,11 +5,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-xohx_$e$ikn9gw@nelme6*)y37#8--(vtm@i(ajniyk=!e5cxe'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = False
 # 'https://pacientes-dev.onrender.com', '127.0.0.1', 'localhost'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://pacientes-dev.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -109,17 +108,6 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
     'JTI_CLAIM': 'jti',
 }
-
-
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'pacientes',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '123456',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
-
     
 DATABASES = {
     'default': {
