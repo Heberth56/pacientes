@@ -22,6 +22,26 @@ class UserSerializer(serializers.ModelSerializer):
             phone = validated_data.get('phone', ''),            
         )
         return user
+
+class UserSerializerUpdate(serializers.ModelSerializer):
+    
+    class Meta:
+        model = CustomUser        
+        fields = [ 'username', 'first_name', 'last_name', 'email', 'cedula', 'gender', 'age', 'address', 'phone']
+           
+    def create(self, validated_data):
+        user = CustomUser.objects.create_user(            
+            username = validated_data['username'],
+            first_name = validated_data['first_name'],
+            last_name = validated_data['last_name'],
+            email = validated_data.get('email', ''),
+            cedula = validated_data['cedula'],
+            gender = validated_data.get('gender', None),
+            age = validated_data.get('age', None),
+            address = validated_data.get('address', ''),
+            phone = validated_data.get('phone', ''),            
+        )
+        return user
     
 class UserGetSerializer(serializers.ModelSerializer):
     HASHIDS = Hashids(salt='users2024$&', min_length=15)

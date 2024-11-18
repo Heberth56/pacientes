@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   error: false,
   message: "",
+  allow: false,
 };
 
 export const authLoginThunk = createAsyncThunk(
@@ -26,24 +27,60 @@ export const authLoginThunk = createAsyncThunk(
   }
 );
 
+export const renewDataThunk = createAsyncThunk(
+  "renew-data/post",
+  async (_, { rejectWithValue }) => {
+    try {
+      const data_res = JSON.parse(localStorage.getItem("lab_data"));
+      if (data_res) return data_res;
+      else return rejectWithValue("Vuelva a iniciar session");
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    resetState: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(authLoginThunk.pending, (state) => {
         state.isLoading = true;
         state.error = false;
         state.message = "";
+        state.allow = false;
       })
 
       .addCase(authLoginThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload;
+        state.allow = true;
       })
 
       .addCase(authLoginThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = true;
+        state.message = action.payload;
+      })
+
+      .addCase(renewDataThunk.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+        state.message = "";
+        state.allow = false;
+      })
+
+      .addCase(renewDataThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = action.payload;
+        state.allow = true;
+      })
+
+      .addCase(renewDataThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = true;
         state.message = action.payload;
@@ -51,4 +88,8 @@ const authSlice = createSlice({
   },
 });
 
+export const dataAllow = (state) => state.authSlice.allow;
+export const dataAuth = (state) => state.authSlice.data;
+export const dataLoading = (state) => state.authSlice.isLoading;
+export const { resetState } = authSlice.actions;
 export default authSlice.reducer;

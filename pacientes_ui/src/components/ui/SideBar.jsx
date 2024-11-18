@@ -12,8 +12,18 @@ import {
 import Links from "./Links";
 import Dropdown from "./Dropdown";
 import Lottie from "lottie-react";
+import { resetState } from "../../app/slice/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { dataAuth } from "../../app/slice/authSlice";
 
 const SideBar = ({ menu }) => {
+  const dispatch = useDispatch();
+  const data = useSelector(dataAuth);
+  const handleLogOut = () => {
+    dispatch(resetState());
+    localStorage.removeItem("lab_data");
+  };
+
   return (
     <div
       className={`h-screen fixed left-0 top-0 overflow-auto bg-sky-950 custom-scrollbar text-white ${
@@ -32,19 +42,21 @@ const SideBar = ({ menu }) => {
           <Links link="/home" active={true}>
             <FaHome className="text-blue-400" /> Home
           </Links>
-          <Dropdown
-            icon={<FaUser className="text-teal-500" />}
-            title="Usuarios"
-          >
-            <Links link="/usuarios">
-              <FaCaretRight className="text-teal-500" />
-              Nuevo usuario
-            </Links>
-            <Links link="/usuarios/admin">
-              <FaCaretRight className="text-teal-500" />
-              Administrar usuarios
-            </Links>
-          </Dropdown>
+          {data.role == "Administrador" && (
+            <Dropdown
+              icon={<FaUser className="text-teal-500" />}
+              title="Usuarios"
+            >
+              <Links link="/usuarios">
+                <FaCaretRight className="text-teal-500" />
+                Nuevo usuario
+              </Links>
+              <Links link="/usuarios/admin">
+                <FaCaretRight className="text-teal-500" />
+                Administrar usuarios
+              </Links>
+            </Dropdown>
+          )}
           <Dropdown
             icon={<FaUserNurse className="text-orange-500" />}
             title="Pacientes"
@@ -99,8 +111,9 @@ const SideBar = ({ menu }) => {
               Administrar Examenes
             </Links>
           </Dropdown>
-          <Links link="/">
-            <FaSignOutAlt className="text-red-500" /> Cerrar sesión
+          <Links link="/" onClick={handleLogOut}>
+            <FaSignOutAlt className="text-red-500" />
+            Cerrar sesión
           </Links>
         </ul>
       </div>

@@ -10,14 +10,14 @@ export const authApiLogin = async (username, password) => {
     const body = await res.data;
 
     if (res.status === 200) {
-      // localStorage.setItem("ceam_token", body.data.token);
+      localStorage.setItem("lab_data", JSON.stringify(body.data));
       return {
         futuresyo: {
           success: true,
           code: body.code,
           message: body.message,
           status: body.status,
-          data: body.data.user,
+          data: body.data,
         },
       };
     } else {

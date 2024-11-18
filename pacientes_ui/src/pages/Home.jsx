@@ -2,12 +2,15 @@ import MensualChart from "../components/charts/MensualChart";
 import PacientesChart from "../components/charts/PacientesChart";
 import UsuariosChart from "../components/charts/UsuariosChart";
 import Roles from "../components/charts/Roles";
+import { useSelector } from "react-redux";
+import { dataAuth } from "../app/slice/authSlice";
 
 const Home = () => {
+  const data = useSelector(dataAuth);
   return (
     <div className="px-5 gap-6 flex flex-col">
       <h1 className="text-lg md:text-3xl font-bold text-sky-700 uppercase">
-        BIENVENIDO JHON BON DOE
+        BIENVENIDO AL SISTEMA "{data.user}"
         <hr />
       </h1>
 

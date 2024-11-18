@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Formik } from "formik";
-import { user_schema } from "../utils/schema";
+import { user_schema, user_edit_schema } from "../utils/schema";
 import CustomInput from "../components/forms/CustomInput";
 import CustomDropdown from "../components/forms/CustomDropdown";
 import CustomButton from "../components/forms/CustomButton";
@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRolesDataThunk } from "../app/slice/rolesSlice";
 import {
   createUserDataThunk,
+  updateUserDataThunk,
   getUserByIdDataThunk,
   resetState,
 } from "../app/slice/usersSlice";
@@ -50,6 +51,17 @@ const Usuarios = () => {
       age: values.age || null,
     };
 
+    if (params?.user_id) {
+      dispatch(
+        updateUserDataThunk({ data: new_data, user_id: params?.user_id })
+      )
+        .unwrap()
+        .then(() => {
+          toast.success("Usuario editado exitosamente");
+        });
+      return;
+    }
+
     dispatch(createUserDataThunk(new_data))
       .unwrap()
       .then(() => {
@@ -65,7 +77,7 @@ const Usuarios = () => {
     <Formik
       initialValues={formData}
       enableReinitialize={true}
-      validationSchema={user_schema}
+      validationSchema={params?.user_id ? user_edit_schema : user_schema}
       onSubmit={(values, { resetForm }) => {
         handleSubmit(values, resetForm);
       }}
@@ -135,17 +147,19 @@ const Usuarios = () => {
                 />
 
                 <CustomInput
-                  title="Contraseña:"
-                  name="password"
-                  type="password"
-                  placeholder="admin123"
-                />
-
-                <CustomInput
                   title="Usuario:"
                   name="username"
                   placeholder="admin"
                 />
+
+                {params?.user_id == null && (
+                  <CustomInput
+                    title="Contraseña:"
+                    name="password"
+                    type="password"
+                    placeholder="admin123"
+                  />
+                )}
 
                 <CustomInput
                   title="Teléfono/Celular:"

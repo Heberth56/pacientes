@@ -7,10 +7,21 @@ import {
   FaSignOutAlt,
   FaHome,
 } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { resetState } from "../../app/slice/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ menu, setMenu }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSidebar = () => {
     setMenu(!menu);
+  };
+
+  const handleLogOut = () => {
+    dispatch(resetState());
+    localStorage.removeItem("lab_data");
+    navigate("/");
   };
 
   return (
@@ -32,7 +43,7 @@ const Navbar = ({ menu, setMenu }) => {
         <ButtonNav text="Examen" to="/examenes/admin">
           <FaClipboard />
         </ButtonNav>
-        <ButtonNav text="Salir" to="/" out={true}>
+        <ButtonNav text="Salir" to="/" out={true} onClick={handleLogOut}>
           <FaSignOutAlt />
         </ButtonNav>
       </div>

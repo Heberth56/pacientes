@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   createUserApi,
+  updateUserApi,
   getUsersApi,
   getUserApi,
   deleteUserApi,
@@ -37,6 +38,19 @@ export const createUserDataThunk = createAsyncThunk(
       } else {
         return rejectWithValue(labasis.message);
       }
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
+export const updateUserDataThunk = createAsyncThunk(
+  "update-user/put",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const { labasis } = await updateUserApi(payload.data, payload.user_id);
+      if (labasis.success) return labasis.data;
+      else return rejectWithValue(labasis.message);
     } catch (err) {
       return rejectWithValue(err.message);
     }
@@ -126,6 +140,30 @@ const usersSlice = createSlice({
         state.error = true;
       })
 
+      .addCase(updateUserDataThunk.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+        state.message = "";
+      })
+
+      .addCase(updateUserDataThunk.fulfilled, (state, action) => {
+        state.loading = false;
+      })
+
+      .addCase(updateUserDataThunk.rejected, (state, action) => {
+        if (typeof action.payload == "object") {
+          Object.keys(action.payload).forEach((field) => {
+            const campos = action.payload[field];
+            campos.forEach((errorMsg) => {
+              state.message += `Error en el campo '${field}': ${errorMsg}\n`;
+            });
+          });
+        } else state.message = action.payload;
+
+        state.loading = false;
+        state.error = true;
+      })
+
       .addCase(getUsersDataThunk.pending, (state) => {
         state.isLoading = true;
         state.error = false;
@@ -153,7 +191,6 @@ const usersSlice = createSlice({
         state.isLoading = false;
         action.payload.age = action.payload.age || "";
         action.payload.role = action.payload.role || "";
-        action.payload.password = action.payload.password || "";
         state.formData = action.payload;
       })
 

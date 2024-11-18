@@ -66,6 +66,53 @@ export const user_schema = Yup.object().shape({
   role: Yup.string().required("El rol es obligatorio").trim(),
 });
 
+export const user_edit_schema = Yup.object().shape({
+  first_name: Yup.string()
+    .min(4, "Mínimo de 4 caracteres")
+    .max(100, "Maximo de caracteres 100")
+    .required("El nombre es obligatorio")
+    .trim(),
+
+  last_name: Yup.string()
+    .min(4, "Mínimo de 4 caracteres")
+    .max(100, "Maximo de caracteres 100")
+    .required("Su apellido es obligatorio")
+    .trim(),
+
+  cedula: Yup.string()
+    .matches(/^\d+$/, "La cédula debe contener solo números")
+    .min(6, "Mínimo de 6 dígitos")
+    .max(15, "Máximo de 15 dígitos")
+    .required("La cédula es obligatoria"),
+
+  email: Yup.string().email("Ingrese un correo electrónico válido"),
+
+  age: Yup.number()
+    .nullable()
+    .integer("La edad debe ser un numero entero")
+    .min(1, "La edad mínima de de 1 año")
+    .max(150, "La edad máxima es de 150 años"),
+
+  phone: Yup.string()
+    .matches(/^\d+$/, "El teléfono debe contener solo números")
+    .min(6, "El teléfono debe tener al menos 6 dígitos")
+    .max(15, "El teléfono no puede tener más de 15 dígitos"),
+
+  username: Yup.string()
+    .min(5, "5 Minimo de carácteres")
+    .max(50, "Máximo 50 carácteres")
+    .required("El nombre de usuario es obligatorio")
+    .trim(),
+
+  address: Yup.string()
+    .min(3, "3 Minimo de carácteres")
+    .max(100, "Máximo 50 carácteres"),
+
+  gender: Yup.string().oneOf(["M", "F"], 'El género debe ser "M" o "F"'),
+
+  role: Yup.string().required("El rol es obligatorio").trim(),
+});
+
 export const patient_schema = Yup.object().shape({
   first_name: Yup.string()
     .min(4, "Mínimo de 4 caracteres")

@@ -24,7 +24,7 @@ function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 to-violet-50">
       <Toaster />
-      <div className="flex flex-wrap-reverse justify-center items-center md:flex-nowrap gap-4 w-full p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-violet-100">
+      <div className="flex flex-wrap-reverse justify-center items-center md:flex-nowrap gap-4 md:w-2/3 w-full p-8 rounded shadow-2xl mx-2 bg-gradient-to-br from-white to-violet-100">
         <div>
           <h1 className="text-center text-lg md:text-2xl font-semibold mb-4 text-violet-700">
             Inicio de Sessión

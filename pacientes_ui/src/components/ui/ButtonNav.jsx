@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-const ButtonNav = ({ text, to, out = false, children }) => {
+const ButtonNav = ({ text, to, out = false, children, ...props }) => {
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate(to);
@@ -13,6 +13,7 @@ const ButtonNav = ({ text, to, out = false, children }) => {
           : "bg-gray-50 hover:bg-gray-300"
       }`}
       onClick={handleNavigate}
+      {...props}
     >
       <span className="text-sm sm:text-base">{children}</span>
       <span className="hidden sm:inline">{text}</span>
