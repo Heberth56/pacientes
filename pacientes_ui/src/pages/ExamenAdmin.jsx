@@ -15,7 +15,7 @@ const Options = ({ id, ...props }) => {
         <FaClipboardCheck className="text-green-500 text-xl" />{" "}
         <span className="font-semibold">Ver</span>
       </Links>
-      <button
+      {/* <button
         className="mt-1 p-3 hover:bg-gray-300 hover:bg-opacity-30"
         {...props}
       >
@@ -26,7 +26,7 @@ const Options = ({ id, ...props }) => {
         {...props}
       >
         <FaTrashAlt className="text-red-500 text-lg" />
-      </button>
+      </button> */}
     </ul>
   );
 };

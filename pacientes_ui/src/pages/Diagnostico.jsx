@@ -26,7 +26,9 @@ const Diagnostico = () => {
   const location = useLocation();
   const qrRef = useRef();
 
-  const fullUrl = `${window.location.protocol}//${window.location.host}${location.pathname}${location.search}${location.hash}`;
+  // const fullUrl = `${window.location.protocol}//${window.location.host}${location.pathname}consult${location.hash}`;
+  const fullUrl = `https://pacientes-dev.onrender.com/consult/${param?.test_id}`;
+  console.log(fullUrl);
 
   const { data, isLoading, error, message } = useSelector(
     (state) => state.testSlice
