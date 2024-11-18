@@ -36,8 +36,6 @@ function App() {
     dispatch(renewDataThunk());
   }, [dispatch]);
 
-  if (isLoading) return <div></div>;
-
   return (
     <Routes>
       {!allow && <Route path="/" element={<Index />} />}

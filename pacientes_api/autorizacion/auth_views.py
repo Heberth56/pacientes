@@ -12,15 +12,14 @@ class LoginAPIView(APIView):
             user = authenticate(request, username=username, password=password)
             if user:
                 roles = user.groups.all()
-                role_names = [group.name for group in roles]
-                
+                role_names = [group.name for group in roles]                
                 return standar_response(
                     message="Hola, bienvenido",
                     data={
                         'user': user.username,
                         'nombre': f"{user.first_name} {user.last_name}",
                         'email': user.email,
-                        'role': role_names[0],
+                        'role': role_names[0] or "",
                         'timestamp': datetime.now().isoformat()
                     })
                         
@@ -30,4 +29,5 @@ class LoginAPIView(APIView):
             )
 
         except Exception as e:
+            print(e)
             return server_error()

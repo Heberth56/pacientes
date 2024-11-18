@@ -108,10 +108,10 @@ SIMPLE_JWT = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pacientes',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': 'project_db_0mzl',
+        'USER': 'project_db_0mzl_user',
+        'PASSWORD': 'POsrzlyY3Pqe54hfVNVOIImYlnXDQuuH',
+        'HOST': 'dpg-csn5skg8fa8c73ag3tv0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
